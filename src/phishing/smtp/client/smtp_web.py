@@ -236,6 +236,10 @@ if option1 != "99":
         # if we are specifying html
         if html_flag == "h":
             message_flag = "html"
+            
+        cycle = raw_input("메일을 한번에 몇번 보내시겠습니까? 숫자를 입력하시오 (예 1,2,3,4,5 ...) ")
+        
+        
         # start the body off blank
         body = ""
         # Here we start to check if we want to track users when they click
@@ -391,7 +395,8 @@ if option1 == '1':
         body_new = body_new.replace("INSERTUSERHERE", base64.b64encode(to))
     # call the function to send email
     try:
-        mail(to, subject, prioflag1, prioflag2, body_new)
+        while(cycle){
+            mail(to, subject, prioflag1, prioflag2, body_new)}
     except socket.error:
         print_error(
             "Unable to establish a connection with the SMTP server. Try again.")
@@ -418,7 +423,8 @@ if option1 == '2':
         # send the actual email
         time_delay = check_config("TIME_DELAY_EMAIL=").lower()
         time.sleep(int(time_delay))
-        mail(to, subject, prioflag1, prioflag2, body_new)
+        while(cycle){
+            mail(to, subject, prioflag1, prioflag2, body_new)}
         email_num = email_num + 1
         # simply print the statement
         print_status("Sent e-mail number: " +
