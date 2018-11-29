@@ -224,7 +224,8 @@ if option1 != "99":
                 inline_files.append( inline_file )
         else:
             break
-
+    
+    cycle = raw_input("how many time do you want to send? 1,2,3,4,5 ...) ")
     subject = input(setprompt(["1"], "Email subject"))
     try:
         html_flag = input(
@@ -237,7 +238,6 @@ if option1 != "99":
         if html_flag == "h":
             message_flag = "html"
             
-        cycle = raw_input("메일을 한번에 몇번 보내시겠습니까? 숫자를 입력하시오 (예 1,2,3,4,5 ...) ")
         
         
         # start the body off blank
