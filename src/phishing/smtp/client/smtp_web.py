@@ -225,7 +225,7 @@ if option1 != "99":
         else:
             break
     
-    cycle = input(setprompt(["1"],"how many time do you want to send? ex. 1,2,3,4,5 ..."))
+    cycle = input("how many time do you want to send? ex. 1,2,3,4,5 ...")
     
     subject = input(setprompt(["1"], "Email subject"))
     try:
@@ -396,8 +396,8 @@ if option1 == '1':
         body_new = body_new.replace("INSERTUSERHERE", base64.b64encode(to))
     # call the function to send email
     try:
-        while(cycle){
-            mail(to, subject, prioflag1, prioflag2, body_new)}
+        for i in range(cycle):
+            mail(to, subject, prioflag1, prioflag2, body_new)
     except socket.error:
         print_error(
             "Unable to establish a connection with the SMTP server. Try again.")
@@ -424,8 +424,8 @@ if option1 == '2':
         # send the actual email
         time_delay = check_config("TIME_DELAY_EMAIL=").lower()
         time.sleep(int(time_delay))
-        while(cycle){
-            mail(to, subject, prioflag1, prioflag2, body_new)}
+        for i in range(cycle):
+            mail(to, subject, prioflag1, prioflag2, body_new)
         email_num = email_num + 1
         # simply print the statement
         print_status("Sent e-mail number: " +
