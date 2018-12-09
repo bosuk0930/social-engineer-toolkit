@@ -225,7 +225,7 @@ if option1 != "99":
         else:
             break
     
-    cycle = input("how many time do you want to send? ex. 1,2,3,4,5 ...")
+    cycle = int(input("how many time do you want to send? ex. 1,2,3,4,5 ..."))
     
     subject = input(setprompt(["1"], "Email subject"))
     try:
